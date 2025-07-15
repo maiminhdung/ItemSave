@@ -1,0 +1,3 @@
+# Ngôn ngữ mặc định cho plugin ItemSave.
+# Tên file không bao gồm đuôi .yml (ví dụ: 'vi', 'en').
+default-locale: 'vi'

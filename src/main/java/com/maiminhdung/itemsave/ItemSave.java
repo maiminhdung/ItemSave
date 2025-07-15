@@ -1,0 +1,52 @@
+package com.maiminhdung.itemsave;
+
+import com.maiminhdung.itemsave.commands.ItemSaveCommand;
+import com.maiminhdung.itemsave.data.DataManager;
+import com.maiminhdung.itemsave.gui.GuiManager;
+import com.maiminhdung.itemsave.gui.InventoryListener;
+import com.maiminhdung.itemsave.lang.LangManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
+
+public final class ItemSave extends JavaPlugin {
+
+    private DataManager dataManager;
+    private GuiManager guiManager;
+    private LangManager langManager;
+
+    @Override
+    public void onEnable() {
+
+        saveDefaultConfig();
+
+        this.dataManager = new DataManager(this);
+        this.langManager = new LangManager(this);
+        this.guiManager = new GuiManager(this);
+
+        // Register commands
+        getCommand("itemsave").setExecutor(new ItemSaveCommand(this));
+        getCommand("itemsave").setTabCompleter(new ItemSaveCommand(this));
+
+        // Register listeners
+        getServer().getPluginManager().registerEvents(new InventoryListener(this), this);
+
+        getLogger().info("ItemSave has Enabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("ItemSave disbaled!");
+    }
+
+    public DataManager getDataManager() {
+        return dataManager;
+    }
+
+    public GuiManager getGuiManager() {
+        return guiManager;
+    }
+    public LangManager getLangManager() {
+        return langManager;
+    }
+}
