@@ -12,14 +12,6 @@
 - **Server Software:** Paper, Folia or compatible forks
 - **Java Version:** 21+
 
-## Installation
-
-1. Download the latest release from [Github](https://modrinth.com/plugin/smart-spawner-plugin)
-2. Place the `.jar` file in your server's `plugins` folder
-3. Restart your server
-4. Configure the plugin in `plugins/SmartSpawner/config.yml`
-5. Reload with `/ss reload`
-
 ## Commands
 
 | Command | Permission | Description |
