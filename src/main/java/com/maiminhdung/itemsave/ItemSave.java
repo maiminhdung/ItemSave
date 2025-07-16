@@ -8,17 +8,17 @@ import com.maiminhdung.itemsave.gui.InventoryListener;
 import com.maiminhdung.itemsave.lang.LangManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
-
 public final class ItemSave extends JavaPlugin {
 
+    private static ItemSave instance;
     private DataManager dataManager;
     private GuiManager guiManager;
     private LangManager langManager;
 
     @Override
     public void onEnable() {
-
+        // Plugin startup logic
+        instance = this;
         saveDefaultConfig();
 
         this.dataManager = new DataManager(this);
