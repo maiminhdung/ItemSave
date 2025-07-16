@@ -20,5 +20,30 @@
 4. Configure the plugin in `plugins/SmartSpawner/config.yml`
 5. Reload with `/ss reload`
 
+## Commands
+
+| Command | Permission | Description |
+|---------|------------|-------------|
+| `/isave list <page>` | `itemsave.list` | Allow viewing the list of saved groups |
+| `/isave gui` | `itemsave.gui` | Allow opening the management GUI |
+| `/isave save hand/inventory <group_name>` | `itemsave.save.hand/itemsave.save.inventory` | Allow using /isave save hand/inventory |
+| `/isave delete <group_name>` | `itemsave.delete` | Allow deleting saved groups with /isave delete |
+| `/isave give <player> <group_name>` | `itemsave.give` | Allow giving saved groups to players with /isave give |
+
+**Aliases:** `/itemsave`, `/isave`
+
+## Permissions
+
+| Permission | Default | Description |
+|------------|---------|-------------|
+| `itemsave.admin` | OP      | Access to all command |
+| `itemsave.list` | OP      | Access to list command |
+| `itemsave.gui` | OP      | Access to GUI |
+| `itemsave.save.hand` | OP      | Access to save hand command |
+| `itemsave.save.inventory` | true    | Access to save inventory command |
+| `itemsave.delete` | true    | Access to delete command |
+| `itemsave.give` | true    | Access to give command |
+
+
 
 ItemSave  © 2025 by maiminhdung is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
