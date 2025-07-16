@@ -8,8 +8,6 @@
 #    ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝    ╚══════╝╚═╝  ╚═╝ ╚══╝ ╚══════╝
 #
 # ═══════════════════════════════════════════════════════════════════════════════════════════════════════════
-#
-#   File ngôn ngữ được thiết kế lại cho ItemSave.
 
 prefix: '<dark_gray>[<#4A90E2>ItemSave</#4A90E2>]</dark_gray> '
 
@@ -19,15 +17,17 @@ command:
   player_not_found: '<#ff5252>Không tìm thấy người chơi <white><player></white>.</#ff5252>'
   invalid_page: '<#ff5252>Số trang ''<yellow><page></yellow>'' không hợp lệ.</#ff5252>'
 
-  help_header: '<dark_gray><strikethrough>                                                                                </strikethrough></dark_gray>'
-  help_save: '<#ab7afd>» <#e6e6fa>/isave save <hand|inventory> <tên></#e6e6fa> <#7b68ee>- <#a8e6cf>Lưu vật phẩm hoặc kho đồ.</#a8e6cf>'
-  help_delete: '<#ab7afd>» <#e6e6fa>/isave delete <tên></#e6e6fa> <#7b68ee>- <#dcedc1>Xóa một nhóm đã lưu.</#dcedc1>'
-  help_list: '<#ab7afd>» <#e6e6fa>/isave list [trang]</#e6e6fa> <#7b68ee>- <#ff8b94>Xem danh sách các nhóm.</#ff8b94>'
-  help_gui: '<#ab7afd>» <#e6e6fa>/isave gui [tên]</#e6e6fa> <#7b68ee>- <#c2a8ff>Mở giao diện quản lý.</#c2a8ff>'
-  help_give: '<#ab7afd>» <#e6e6fa>/isave give <người_chơi> <tên></#e6e6fa> <#7b68ee>- <#ffd3b6>Tặng một nhóm vật phẩm.</#ffd3b6>'
-  help_footer: '<dark_gray><strikethrough>                                                                                </strikethrough></dark_gray>'
+  usage: |
+    <dark_gray><strikethrough>                                                                                </strikethrough></dark_gray>
+    <#ab7afd>» <#e6e6fa>/isave save <hand|inventory> <tên></#e6e6fa> <#7b68ee>- <#a8e6cf>Lưu vật phẩm hoặc kho đồ.</#a8e6cf>
+    <#ab7afd>» <#e6e6fa>/isave delete <tên></#e6e6fa> <#7b68ee>- <#dcedc1>Xóa một nhóm đã lưu.</#dcedc1>
+    <#ab7afd>» <#e6e6fa>/isave list [trang]</#e6e6fa> <#7b68ee>- <#ff8b94>Xem danh sách các nhóm.</#ff8b94>
+    <#ab7afd>» <#e6e6fa>/isave gui [tên]</#e6e6fa> <#7b68ee>- <#c2a8ff>Mở giao diện quản lý.</#c2a8ff>
+    <#ab7afd>» <#e6e6fa>/isave give <người_chơi> <tên></#e6e6fa> <#7b68ee>- <#ffd3b6>Tặng một nhóm vật phẩm.</#ffd3b6>
+    <#ab7afd>» <#e6e6fa>/isave reload</#e6e6fa> <#7b68ee>- <#b4eeb4>Tải lại plugin.</#b4eeb4>
+    <dark_gray><strikethrough>    
 
-  list_header: " <strikethrough><#333333><gradient:#4A90E2:#7930D9>    </gradient></strikethrough> <bold><gradient:#4A90E2:#7930D9>DANH SÁCH NHÓM</gradient></bold> <strikethrough><gradient:#7930D9:#4A90E2>    </gradient></#333333></strikethrough>"
+  list_header: " <strikethrough><#333333><gradient:#4A90E2:#7930D9>    </gradient></strikethrough> <bold><gradient:#4A90E2:#7930D9>DANH SÁCH NHÓM</gradient></bold> <strikethrough><gradient:#7930D9:#4A90E2>    </gradient></strikethrough>"
   list_item_prefix: " <dark_gray>»</dark_gray> "
   list_item_text: "<gradient:#E0E0E0:#B0B0B0><group></gradient>"
   list_item_hover: "<aqua>Click để mở & chỉnh sửa nhóm <yellow><group></yellow>.</aqua>"
@@ -44,6 +44,8 @@ command:
   no_item_in_hand: '<#ff5252>Bạn không cầm gì trên tay!</#ff5252>'
   group_exists: '<#ff5252>Nhóm ''<yellow><group></yellow>'' đã tồn tại.</#ff5252>'
   group_not_exists: '<#ff5252>Nhóm ''<yellow><group></yellow>'' không tồn tại.</#ff5252>'
+
+  reload_success: '<#37eb9a>Đã tải lại cấu hình và ngôn ngữ thành công.</#37eb9a>'
 
 success:
   inventory_saved: '<#37eb9a>Đã lưu kho đồ vào nhóm ''<aqua><group></aqua>''.'

@@ -1,5 +1,5 @@
 name: ItemSave
-version: '1.0-SNAPSHOT'
+version: '1.0.0'
 main: com.maiminhdung.itemsave.ItemSave
 api-version: '1.20'
 folia-supported: true
@@ -45,4 +45,8 @@ permissions:
 
   itemsave.give:
     description: Allow giving saved groups to players with /isave give.
+    default: op
+
+  itemsave.reload:
+    description: Allow use /isave reload.
     default: op

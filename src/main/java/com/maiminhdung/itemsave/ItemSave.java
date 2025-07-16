@@ -1,5 +1,6 @@
 package com.maiminhdung.itemsave;
 
+import com.maiminhdung.itemsave.bstats.Metrics;
 import com.maiminhdung.itemsave.commands.ItemSaveCommand;
 import com.maiminhdung.itemsave.data.DataManager;
 import com.maiminhdung.itemsave.gui.GuiManager;
@@ -31,12 +32,19 @@ public final class ItemSave extends JavaPlugin {
         // Register listeners
         getServer().getPluginManager().registerEvents(new InventoryListener(this), this);
 
-        getLogger().info("ItemSave has Enabled!");
+        // Bstats Metrics
+        setupBtatsMetrics();
+
+        getLogger().info("ItemSave has been enabled!");
+    }
+
+    private void setupBtatsMetrics() {
+        Metrics metrics = new Metrics(this, 26520);
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("ItemSave disbaled!");
+        getLogger().info("ItemSave has been disbaled!");
     }
 
     public DataManager getDataManager() {
@@ -48,5 +56,13 @@ public final class ItemSave extends JavaPlugin {
     }
     public LangManager getLangManager() {
         return langManager;
+    }
+
+    public void reload() {
+        // Reload config.yml
+        super.reloadConfig();
+
+        // Reload language files
+        this.langManager.reload();
     }
 }

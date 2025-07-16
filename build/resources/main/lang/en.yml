@@ -8,10 +8,6 @@
 #    ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝    ╚══════╝╚═╝  ╚═╝ ╚══╝ ╚══════╝
 #
 # ═══════════════════════════════════════════════════════════════════════════════════════════════════════════
-#
-#   Redesigned language file for ItemSave.
-
-prefix: '<dark_gray>[<#4A90E2>IᴛᴇᴍSᴀᴠᴇ]</dark_gray> '
 
 prefix: '<dark_gray>[<#4A90E2>ItemSave</#4A90E2>]</dark_gray> '
 
@@ -21,15 +17,17 @@ command:
   player_not_found: '<#ff5252>Player <white><player></white> not found.</#ff5252>'
   invalid_page: '<#ff5252>Invalid page number ''<yellow><page></yellow>''.</#ff5252>'
 
-  help_header: '<dark_gray><strikethrough>                                                                                </strikethrough></dark_gray>'
-  help_save: '<#ab7afd>» <#e6e6fa>/isave save <hand|inventory> <name></#e6e6fa> <#7b68ee>- <#a8e6cf>Save item or inventory.</#a8e6cf>'
-  help_delete: '<#ab7afd>» <#e6e6fa>/isave delete <name></#e6e6fa> <#7b68ee>- <#dcedc1>Delete a saved group.</#dcedc1>'
-  help_list: '<#ab7afd>» <#e6e6fa>/isave list [page]</#e6e6fa> <#7b68ee>- <#ff8b94>View the list of groups.</#ff8b94>'
-  help_gui: '<#ab7afd>» <#e6e6fa>/isave gui [name]</#e6e6fa> <#7b68ee>- <#c2a8ff>Open the management GUI.</#c2a8ff>'
-  help_give: '<#ab7afd>» <#e6e6fa>/isave give <player> <name></#e6e6fa> <#7b68ee>- <#ffd3b6>Give an item group.</#ffd3b6>'
-  help_footer: '<dark_gray><strikethrough>                                                                                </strikethrough></dark_gray>'
+  usage: |
+    <dark_gray><strikethrough>                                                                                </strikethrough></dark_gray>
+    <#ab7afd>» <#e6e6fa>/isave save <hand|inventory> <name></#e6e6fa> <#7b68ee>- <#a8e6cf>Save item or inventory.</#a8e6cf>
+    <#ab7afd>» <#e6e6fa>/isave delete <name></#e6e6fa> <#7b68ee>- <#dcedc1>Delete a saved group.</#dcedc1>
+    <#ab7afd>» <#e6e6fa>/isave list [page]</#e6e6fa> <#7b68ee>- <#ff8b94>View the list of groups.</#ff8b94>
+    <#ab7afd>» <#e6e6fa>/isave gui [name]</#e6e6fa> <#7b68ee>- <#c2a8ff>Open the management GUI.</#c2a8ff>
+    <#ab7afd>» <#e6e6fa>/isave give <player> <name></#e6e6fa> <#7b68ee>- <#ffd3b6>Give an item group.</#ffd3b6>
+    <#ab7afd>» <#e6e6fa>/isave reload</#e6e6fa> <#7b68ee>- <#b4eeb4>Reload the plugin.</#b4eeb4>
+    <dark_gray><strikethrough>                                                                                     </strikethrough></dark_gray>'
 
-  list_header: " <strikethrough><#333333><gradient:#4A90E2:#7930D9>    </gradient></strikethrough> <bold><gradient:#4A90E2:#7930D9>GROUP LIST</gradient></bold> <strikethrough><gradient:#7930D9:#4A90E2>    </gradient></#333333></strikethrough>"
+  list_header: " <strikethrough><#333333><gradient:#4A90E2:#7930D9>    </gradient></strikethrough> <bold><gradient:#4A90E2:#7930D9>GROUP LIST</gradient></bold> <strikethrough><gradient:#7930D9:#4A90E2>    </gradient></strikethrough>"
   list_item_prefix: " <dark_gray>»</dark_gray> "
   list_item_text: "<gradient:#E0E0E0:#B0B0B0><group></gradient>"
   list_item_hover: "<aqua>Click to open & edit group <yellow><group></yellow>.</aqua>"
@@ -46,6 +44,8 @@ command:
   no_item_in_hand: '<#ff5252>You are not holding an item!</#ff5252>'
   group_exists: '<#ff5252>Group ''<yellow><group></yellow>'' already exists.</#ff5252>'
   group_not_exists: '<#ff5252>Group ''<yellow><group></yellow>'' does not exist.</#ff5252>'
+
+  reload_success: '<#37eb9a>Configuration and language files reloaded successfully.</#37eb9a>'
 
 success:
   inventory_saved: '<#37eb9a>Inventory saved to group ''<aqua><group></aqua>''.'

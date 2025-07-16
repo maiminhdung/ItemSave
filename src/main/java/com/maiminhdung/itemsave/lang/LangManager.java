@@ -26,8 +26,29 @@ public class LangManager {
     public LangManager(ItemSave plugin) {
         this.plugin = plugin;
         this.miniMessage = MiniMessage.miniMessage();
-        loadLanguageFile();
+        reload();
     }
+
+    public void reload() {
+        String locale = plugin.getConfig().getString("default-locale", "vi");
+        File langFile = new File(plugin.getDataFolder(), "lang/" + locale + ".yml");
+
+        if (!langFile.exists()) {
+            plugin.saveResource("lang/" + locale + ".yml", false);
+        }
+
+        this.langConfig = YamlConfiguration.loadConfiguration(langFile);
+
+        try (InputStream defaultStream = plugin.getResource("lang/" + locale + ".yml")) {
+            if (defaultStream != null) {
+                YamlConfiguration defaultConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defaultStream, StandardCharsets.UTF_8));
+                this.langConfig.setDefaults(defaultConfig);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public Component getListItemComponent(String groupName) {
         // 1. Take raw strings from the language file
@@ -40,23 +61,6 @@ public class LangManager {
                 text.hoverEvent(HoverEvent.showText(hover))
                         .clickEvent(ClickEvent.runCommand("/isave gui " + groupName))
         );
-    }
-
-    private void loadLanguageFile() {
-        String locale = plugin.getConfig().getString("default-locale", "vi");
-        File langFile = new File(plugin.getDataFolder(), "lang/" + locale + ".yml");
-        if (!langFile.exists()) {
-            plugin.saveResource("lang/" + locale + ".yml", false);
-        }
-        this.langConfig = YamlConfiguration.loadConfiguration(langFile);
-        try (InputStream defaultStream = plugin.getResource("lang/" + locale + ".yml")) {
-            if (defaultStream != null) {
-                YamlConfiguration defaultConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defaultStream, StandardCharsets.UTF_8));
-                this.langConfig.setDefaults(defaultConfig);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public Component getComponent(String path, String... args) {
@@ -73,7 +77,7 @@ public class LangManager {
     public Component getPrefixedComponent(String path, String... args) {
         Component prefix = getComponent("prefix");
         Component message = getComponent(path, args);
-        return prefix.append(Component.space()).append(message);
+        return prefix.append(message);
     }
 
     public Component getComponent(String path) {

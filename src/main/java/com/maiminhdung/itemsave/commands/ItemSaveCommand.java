@@ -39,19 +39,25 @@ public class ItemSaveCommand implements CommandExecutor, TabCompleter {
             case "list" -> handleList(sender, args);
             case "gui" -> handleGui(sender, args);
             case "give" -> handleGive(sender, args);
+            case "reload" -> handleReload(sender); // Lệnh mới
             default -> sendHelpMessage(sender);
         }
         return true;
     }
 
+    private void handleReload(CommandSender sender) {
+        if (!sender.hasPermission("itemsave.reload")) {
+            sender.sendMessage(plugin.getLangManager().getPrefixedComponent("command.no_permission"));
+            return;
+        }
+
+        plugin.reload();
+
+        sender.sendMessage(plugin.getLangManager().getPrefixedComponent("command.reload_success"));
+    }
+
     private void sendHelpMessage(CommandSender sender) {
-        sender.sendMessage(plugin.getLangManager().getComponent("command.help_header"));
-        sender.sendMessage(plugin.getLangManager().getComponent("command.help_save"));
-        sender.sendMessage(plugin.getLangManager().getComponent("command.help_delete"));
-        sender.sendMessage(plugin.getLangManager().getComponent("command.help_list"));
-        sender.sendMessage(plugin.getLangManager().getComponent("command.help_gui"));
-        sender.sendMessage(plugin.getLangManager().getComponent("command.help_give"));
-        sender.sendMessage(plugin.getLangManager().getComponent("command.help_footer"));
+        sender.sendMessage(plugin.getLangManager().getComponent("command.usage"));
     }
 
     private void handleList(CommandSender sender, String[] args) {
@@ -248,7 +254,7 @@ public class ItemSaveCommand implements CommandExecutor, TabCompleter {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
         if (args.length == 1) {
-            return StringUtil.copyPartialMatches(args[0], List.of("save", "delete", "list", "gui", "give"), new ArrayList<>());
+            return StringUtil.copyPartialMatches(args[0], List.of("save", "delete", "list", "gui", "give", "reload"), new ArrayList<>());
         }
         if (args.length == 2) {
             if (args[0].equalsIgnoreCase("save")) {
