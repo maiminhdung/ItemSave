@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ItemSave extends JavaPlugin {
 
-    private static ItemSave instance;
+    public static ItemSave instance;
     private DataManager dataManager;
     private GuiManager guiManager;
     private LangManager langManager;
