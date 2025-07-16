@@ -29,6 +29,7 @@
 | `/isave save hand/inventory <group_name>` | `itemsave.save.hand/itemsave.save.inventory` | Allow using /isave save hand/inventory |
 | `/isave delete <group_name>` | `itemsave.delete` | Allow deleting saved groups with /isave delete |
 | `/isave give <player> <group_name>` | `itemsave.give` | Allow giving saved groups to players with /isave give |
+| `/isave reload` | `itemsave.reload` | Allow reload config and locale file |
 
 **Aliases:** `/itemsave`, `/isave`
 
@@ -40,10 +41,10 @@
 | `itemsave.list` | OP      | Access to list command |
 | `itemsave.gui` | OP      | Access to GUI |
 | `itemsave.save.hand` | OP      | Access to save hand command |
-| `itemsave.save.inventory` | true    | Access to save inventory command |
-| `itemsave.delete` | true    | Access to delete command |
-| `itemsave.give` | true    | Access to give command |
-
+| `itemsave.save.inventory` | OP    | Access to save inventory command |
+| `itemsave.delete` | OP    | Access to delete command |
+| `itemsave.give` | OP    | Access to give command |
+| `itemsave.reload` | OP    | Access to reload command |
 
 
 ItemSave  © 2025 by maiminhdung is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
