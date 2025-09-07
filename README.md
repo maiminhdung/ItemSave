@@ -6,6 +6,8 @@
 
 <br>
 
+Join support discord: https://discord.gg/sGZ2QSMDEg
+
 ## Requirements
 
 - **Minecraft Version:** 1.20 - 1.21.7
